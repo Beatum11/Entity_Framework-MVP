@@ -1,0 +1,122 @@
+﻿<Window x:Class="Module_17.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Module_17"
+        mc:Ignorable="d"
+        Title="Module_17" Height="800" Width="1200">
+    <Grid>
+
+        <!--#region Добавление нового пользователя-->
+        <TextBox x:Name="surnameBox" HorizontalAlignment="Left" FontSize="18" Height="29" Margin="12,366,0,0"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"
+                 RenderTransformOrigin="0.127,0.303" ToolTip="Фамилия"/>
+
+        <TextBox x:Name="nameBox" HorizontalAlignment="Left" FontSize="18"  Height="29" Margin="206,366,0,0"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"
+                 RenderTransformOrigin="0.127,0.303" ToolTip="Имя" />
+
+        <TextBox x:Name="fath_nameBox" HorizontalAlignment="Left" FontSize="18" Height="29"
+                 Margin="395,366,0,0" TextWrapping="Wrap" Text="" ToolTip="Отчество"
+                 VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.127,0.303"/>
+
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" FontSize="18" Height="29" Margin="602,366,0,0"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154" ToolTip="Email"
+                 RenderTransformOrigin="0.127,0.303"/>
+
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="16,317,0,0"
+                   TextWrapping="Wrap"
+                   Text="Добавить нового клиента:" VerticalAlignment="Top"
+                   Width="302" Height="44"/>
+
+        <Button x:Name="addCustomerButton" Content="Добавить"
+                FontSize="18" HorizontalAlignment="Left"
+                Margin="807,356,0,0"
+                VerticalAlignment="Top" Width="143" Height="39" Click="addCustomerButton_Click"/>
+        <!--#endregion-->
+
+
+
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="165" Margin="249,35,0,0"
+                  VerticalAlignment="Top" Width="735"/>
+
+
+
+        <!--#region Посмотреть покупки клиента под определенным Email-->
+
+        <TextBox x:Name="clientEmail" HorizontalAlignment="Left"
+                 Height="32" Margin="16,134,0,0"
+                 TextWrapping="Wrap" Text="" FontSize="18"
+                 VerticalAlignment="Top" Width="138" RenderTransformOrigin="0.487,3.158"/>
+
+        <Button x:Name="showBuysButton" Content="Просмотреть" FontSize="18"
+                HorizontalAlignment="Left" Margin="16,185,0,0"
+                VerticalAlignment="Top" Width="122" Height="41" Click="showBuysButton_Click"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="16,35,0,0" FontSize="20"
+                   TextWrapping="Wrap" Text="Просмотреть покупки клиента c Email: "
+                   VerticalAlignment="Top" Height="94" Width="170"/>
+
+        <Button x:Name="showTableButton" Content="Показать список клиентов" HorizontalAlignment="Left"
+                Margin="375,223,0,0" VerticalAlignment="Top"
+                Width="224" Height="63" FontSize="18" Click="showTableButton_Click"/>
+
+
+        <!--#endregion-->
+
+        <!--#region Обновление данных клиента-->
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="14,449,0,0"
+            TextWrapping="Wrap"
+            Text="Обновить данные клиента под Id: " VerticalAlignment="Top"
+            Width="193" Height="60"/>
+
+        <TextBox x:Name="customerIdBox" HorizontalAlignment="Left" Height="29" Margin="220,480,0,0"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top"
+                 Width="46" FontSize="18"/>
+
+        <Button x:Name="changeDataButton" Content="Обновить данные" HorizontalAlignment="Left"
+                Margin="807,527,0,0" FontSize="18"
+                VerticalAlignment="Top" Width="161" Height="48" Click="changeDataButton_Click" />
+
+        <TextBox x:Name="changeSurnameBox" HorizontalAlignment="Left" FontSize="18" Height="29" Margin="12,546,0,0"
+            TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"
+            RenderTransformOrigin="0.127,0.303" ToolTip="Фамилия"/>
+
+        <TextBox x:Name="changeNameBox" HorizontalAlignment="Left" FontSize="18"  Height="29" Margin="206,546,0,0"
+            TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"
+            RenderTransformOrigin="0.127,0.303" ToolTip="Имя" />
+
+        <TextBox x:Name="changeFath_nameBox" HorizontalAlignment="Left" FontSize="18" Height="29"
+            Margin="395,546,0,0" TextWrapping="Wrap" Text="" ToolTip="Отчество"
+            VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.127,0.303"/>
+
+        <TextBox x:Name="changeEmailBox" HorizontalAlignment="Left" FontSize="18" Height="29" Margin="602,546,0,0"
+            TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154" ToolTip="Email"
+            RenderTransformOrigin="0.127,0.303"/>
+        <!--#endregion-->
+
+        
+        <!--#region Удаление записи из БД-->
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="34,640,0,0"
+            TextWrapping="Wrap"
+            Text="Удалить запись клиента под Id: " VerticalAlignment="Top"
+            Width="152" Height="61"/>
+
+        <TextBox x:Name="deleteCustomerIdBox" HorizontalAlignment="Left" Height="29" Margin="191,672,0,0"
+            TextWrapping="Wrap" Text="" VerticalAlignment="Top"
+            Width="46" FontSize="18"/>
+        
+        <Button x:Name="deleteDataButton" Content="Удалить запись" HorizontalAlignment="Left"
+            Margin="305,653,0,0" FontSize="18"
+            VerticalAlignment="Top" Width="161" Height="48" Click="deleteDataButton_Click" />
+        
+        <!--#endregion-->
+
+        <Button x:Name="showBuysTable" Content="Показать табл. с покупками" HorizontalAlignment="Left"
+            Margin="807,223,0,0" VerticalAlignment="Top"
+            Width="243" Height="63" FontSize="18" Click="showBuysTable_Click"/>
+
+
+    </Grid>
+</Window>
